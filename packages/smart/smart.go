@@ -30,7 +30,6 @@ import (
 	"github.com/GenesisKernel/go-genesis/packages/consts"
 	"github.com/GenesisKernel/go-genesis/packages/converter"
 	"github.com/GenesisKernel/go-genesis/packages/crypto"
-	"github.com/GenesisKernel/go-genesis/packages/migration/vde"
 	"github.com/GenesisKernel/go-genesis/packages/model"
 	"github.com/GenesisKernel/go-genesis/packages/script"
 	"github.com/GenesisKernel/go-genesis/packages/utils"
@@ -198,6 +197,9 @@ func VMRun(vm *script.VM, block *script.Block, params []interface{}, extend *map
 }
 
 func VMGetContract(vm *script.VM, name string, state uint32) *Contract {
+	if len(name) == 0 {
+		return nil
+	}
 	name = script.StateName(state, name)
 	obj, ok := vm.Objects[name]
 
@@ -558,7 +560,7 @@ func (sc *SmartContract) getExtend() *map[string]interface{} {
 		`block_time`:        blockTime,
 		`original_contract`: ``,
 		`this_contract`:     ``,
-		`guest_key`:         vde.GuestKey,
+		`guest_key`:         consts.GuestKey,
 	}
 
 	for key, val := range sc.TxData {

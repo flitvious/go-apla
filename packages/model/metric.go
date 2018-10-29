@@ -1,6 +1,7 @@
 package model
 
 import (
+	"github.com/GenesisKernel/go-genesis/packages/types"
 	"time"
 )
 
@@ -69,10 +70,10 @@ func GetMetricValues(metric, timeInterval, aggregateFunc, timeBlock string) ([]i
 			return nil, err
 		}
 
-		result = append(result, map[string]string{
+		result = append(result, types.LoadMap(map[string]interface{}{
 			"key":   key,
 			"value": value,
-		})
+		}))
 	}
 
 	return result, nil
