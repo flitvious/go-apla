@@ -12,9 +12,47 @@ https://camo.githubusercontent.com/915b7be44ada53c290eb157634330494ebe3e30a/6874
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/go-apla?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 [![Slack Status](https://slack.apla.io/badge.svg)](https://slack.apla.io)
 
-# Apla Getting Started Guide
+# About Apla
 
-## Table of contents
+Apla blockchain platform is a secure, simple and compliant blockchain infrastructure for the fast-growing global collaborative economy. It was developed for building digital ecosystems. The platform includes an integrated application development environment with a multi-level system of access rights to data, interfaces and smart contracts.
+
+Apla blockchain platform is based on a peer-to peer network. Full nodes of the network store the up-to-date version of the blockchain and the database, in which the current state of the platform is recorded. Network users receive data by requesting it from databases of full nodes using the software client. You can use REST API to work with the platform as well.
+
+New data is sent to the network in the form of transactions signed by users and such transactions are basically commands to modify information in the database. Transactions are aggregated into blocks, which are then added to the blockchain on the network nodes. After a new block is added to the blockchain, each full node processes the transactions in this block, thus making changes to data in its database accordingly.
+
+For more information about Apla, visit [Apla website](https://apla.io).
+
+We are open to new ideas and contributions and will be happy to see you among our active contributors to the source code, documentation, or whatever part you find inspiring in Apla. See our [Contribution Guide](https://github.com/AplaProject/go-apla/blob/master/CONTRIBUTING.md) for more information.
+
+# Getting started
+
+## Apla Quickstart
+
+Apla Quickstart is a compact software package that you can use to deploy the Apla blockchain network on a local computer. Quickstart installs 1 to 5 nodes alongside the platform’s client software.
+
+Quickstart is aimed at providing end users with an idea of how Apla blockchain works and includes usage examples of graphical interface elements as well as smart-contracts. 
+
+Quickstart is available for computers running Windows, Mac and Linux.
+
+[Apla Quickstart for Linux and Mac](https://github.com/AplaProject/quick-start)
+
+[Apla Quickstart for Windows](https://github.com/AplaProject/quick-start-win)
+
+## Apla Testnet
+
+  **Apla Testnet** is our platform's network for testing purposes. Using the testnet, you can build apps from scratch and try out how apps built with Apla Quickstart operate in a real network environment.
+  See your projects in action. Try out the latest Apla features.
+  
+  [Apla Testnet](https://testapla0.apla.io/)
+
+## Deploying the Apla blockchain platform
+
+  Ready to deploy the network? You can find out how to do that using [Apla Deployment Guide](#deploy) below.
+
+
+# Apla Deployment Guide <a name="deploy"></a>
+
+This guide describes how to deploy Apla blockchain platform.
 
    * [Overview](#overview)
    * [Backend Install](#backend-install)
@@ -37,9 +75,9 @@ https://camo.githubusercontent.com/915b7be44ada53c290eb157634330494ebe3e30a/6874
 
 ## Overview <a name="overview"></a>
 
- Apla is a platform which was developed for building digital ecosystems. Go-apla is a backend for Apla blockchain platform.
+ Apla is a public blockchain platform for building digital ecosystems. Go-apla is a backend for Apla.
 
-Apla Blockchain Platform consists of two main components:
+Apla blockchain platform has two main components:
 
 - Backend
 
@@ -54,7 +92,7 @@ Apla Blockchain Platform consists of two main components:
 
 In a production environment, each of these components (backend and frontend) can be deployed on different hosts and operating systems.
 
-In this guide we will deploy Apla Blockchain Platform based on three nodes with the same OS on the test ICT-infrastructure and build Molis client.
+In this guide we will deploy Apla blockchain platform based on three nodes with the same OS on the test ICT-infrastructure and build Molis client.
 
 As a node OS we will use:
  - Debian 9 (Stretch) 64-bit [official distributive](https://www.debian.org/CD/http-ftp/#stable)
@@ -83,7 +121,7 @@ For testing purposes, all of these hosts are connected to each other in a simple
 
 In  this section we will deploy Apla Backend components.
 
-Apla Blockchain Platform backend consists of three main components:
+Apla blockchain platform backend consists of three main components:
 
 1) **PostgreSQL database system**
 
@@ -99,7 +137,7 @@ For testing purposes, in this guide, we will deploy PostgreSQL on each Apla node
 
 Centrifugo is a notification service which receives notifications from Go-Apla TCP-server and sends them to the frontend (Molis client), so that users can see status of their transactions.
 
-Centrifugo is a unified notification service for all nodes in Apla Blockchain Platform. When Molis client connects to Go-Apla API-service, it receives the IP-address of Centrifugo host and connects to it via a websocket.
+Centrifugo is a unified notification service for all nodes in Apla blockchain platform. When Molis client connects to Go-Apla API-service, it receives the IP-address of Centrifugo host and connects to it via a websocket.
 
 In a testing environment, you can deploy centrifugo service on the same host with other backend components. It can be a single centrifugo service for all nodes, or each node may connect to its own centrifugo instance.
 
@@ -167,7 +205,7 @@ $ sudo apt install -y git curl apt-transport-https build-essential
 
 #### Create a directory for Apla
 
-For Debian 9 OS, it is recommended to store all software used by Apla Blockchain Platform in a special directory.
+For Debian 9 OS, it is recommended to store all software used by Apla blockchain platform in a special directory.
 
 In this guide, we will use /opt/apla directory, but you can change it to your own.
 
@@ -841,7 +879,7 @@ Now, all nodes are connected to each other.
 
 ## ***Frontend Install*** <a name="frontend-install"></a>
 
-Molis client is the frontend for Apla Blockchain Platform.
+Molis client is the frontend for Apla blockchain platform.
 
 First, to work with the system, you must build Molis client, then you can deploy it to your users.
 
